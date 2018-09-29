@@ -1,0 +1,30 @@
+div {
+  width: 20px;
+  margin: 5px;
+  display: inline-block;
+  height: 20px;  
+  margin: 25px;
+}
+div.container {
+  margin: 40px auto;
+  display: block;
+  width: 500px;
+}
+.circle {
+  border-radius: 50%;
+  background-color: #0000ff;
+}
+.square {
+  background-color: #ff0000;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  border:0;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>AudioAnalyzer</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class='container'>
+    <!-- responds to audio in -->
+    <div class='circle'>
+  </div>
+  <!-- responds to audio out  -->
+  <div class='square'>
+  </div>
+</div>
+<button id='play'>play</button>
+<audio crossorigin="anonymous" id="player" allow="autoplay">
+  <source src="https://dancepartyjukebox.now.sh/mp3s/xoxo-813.mp3" type="audio/mp3">
+</audio>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.min.js'></script>
+<script src="js/init.js"></script>
+<script src="js/AudioAnalyzer.js"></script>
+</body>
+</html>
