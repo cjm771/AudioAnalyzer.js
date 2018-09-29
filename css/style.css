@@ -1,14 +1,21 @@
-div {
+body,html {
+  height: 100%;
+}
+
+div.container {
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100%;
+}
+div.shape{
   width: 20px;
   margin: 5px;
   display: inline-block;
   height: 20px;  
-  margin: 25px;
-}
-div.container {
-  margin: 40px auto;
-  display: block;
-  width: 500px;
+  margin: 25px;  
 }
 .circle {
   border-radius: 50%;
@@ -18,11 +25,15 @@ div.container {
   background-color: #ff0000;
 }
 
-button {
+div#btn_wpr {
   position: absolute;
   top: 0;
   left: 0;
+  width: 50%;
   margin: 20px;
+}
+
+button {
   border:0;
   background-color: #000;
   color: #fff;

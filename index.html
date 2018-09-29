@@ -10,13 +10,16 @@
 <body>
 <div class='container'>
     <!-- responds to audio in -->
-    <div class='circle'>
+    <div class='shape circle'>
   </div>
   <!-- responds to audio out  -->
-  <div class='square'>
+  <div class='shape square'>
   </div>
 </div>
-<button id='play'>play</button>
+<div id='btn_wpr'>
+  <button id='play'>play</button>
+  <button id='mic'>start mic</button>
+</div>
 <audio crossorigin="anonymous" id="player" allow="autoplay">
   <source src="https://dancepartyjukebox.now.sh/mp3s/xoxo-813.mp3" type="audio/mp3">
 </audio>

@@ -22,6 +22,7 @@ Audio Analyzer
 var AudioAnalyzer = function(elOrUrl, onReady) {
   this.currentPosition = 0;
   this.isPlaying = false;
+  this.isMicOn = false;
   this.audioCtx = new AudioContext();
   this.desiredFFT = 32;
 
@@ -61,7 +62,6 @@ AudioAnalyzer.prototype.getLevel = function(analyzer) {
 }
 
 AudioAnalyzer.prototype.getMicLevel = function() {
-  console.log('get mic levels');
   return this.getLevel(this.analyserIn);
 }
 
@@ -83,14 +83,24 @@ AudioAnalyzer.prototype.fft = function(analyzer) {
 //start mic..
 AudioAnalyzer.prototype.startMic = function() {
   var that = this;
+  this.isMicOn = true;
   navigator.getUserMedia({ audio: true }, processSound, function(e) { console.log('error occurred when initializing mic:', e)});
   function processSound (stream) {
     that.analyserIn.smoothingTimeConstant = 0.85;
     that.input = that.audioCtx.createMediaStreamSource(stream);
     that.input.connect(that.analyserIn);
-    that.analyserIn.connect(that.audioCtx.destination);
+    // that.analyserIn.connect(that.audioCtx.destination);
   }
 }
+
+AudioAnalyzer.prototype.stopMic = function() {
+  this.isMicOn = false;
+  if (this.analyserIn) {
+    this.input.disconnect(this.analyserIn);
+    this.input = null;
+  }
+}
+
 
 AudioAnalyzer.prototype.pause = function() {
   this.isPlaying = false;
