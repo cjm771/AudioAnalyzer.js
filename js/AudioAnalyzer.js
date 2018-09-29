@@ -2,7 +2,7 @@
 Audio Analyzer
 ***********/
 /*
- * Grab a CORS rrady http mp3 and analyze/stream away: new AudioAnalyzer('http://myawesome.com/cool.mp3', func);
+ * Grab a CORS ready http mp3 and analyze/stream away: new AudioAnalyzer('http://myawesome.com/cool.mp3', func);
  * Web audio html tag (careful DOM issues in chrome): new AudioAnalyzer('#el', func);
  * Mic (in beta..): run aa.startMic();
  * 
