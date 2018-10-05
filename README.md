@@ -22,7 +22,7 @@ Deployed Demo here: https://audioanalyzer.herokuapp.com/
 ![oof fun](http://g.recordit.co/UkyTd9hefJ.gif)
 # Docs
 
-Note: urls must be cors ready, see the `mediaCORSReadyServer` for how to deploy yourown.
+Note: urls must be cors ready, see the `mediaCORSReadyServer` for how to deploy your own.
 Todo: fill out doc for loading via html `<audio>` tag.
 
 ### init + playbback
