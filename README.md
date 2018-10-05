@@ -68,7 +68,7 @@ myAnalyzer.destroy();
 ```
 
 # React Component
-A react data component can be conveniently used in your react application like so. `url` would be your mp3, `play ` would be a boolean toggle to start / stop the playing. And attach event listenrs to `onAnalyze` or  `onReady`.
+A react data component can be conveniently used in your react application like so. `url` would be your mp3, `play ` would be a boolean toggle to start / stop the playing. And attach event listeners to `onAnalyze` or  `onReady`.
 
 ###  Component
 ``` jsx
