@@ -25,7 +25,7 @@ Deployed Demo here: https://audioanalyzer.herokuapp.com/
 Note: urls must be cors ready, see the `mediaCORSReadyServer` for how to deploy your own.
 Todo: fill out doc for loading via html `<audio>` tag.
 
-### init + playbback
+### init + playback
 ```js 
 // new AudioAnalyzer(url, callback);
 const myAnalyzer = new AudioAnalyzer('http://my.amazing.site.com/with/a/mp3.mp3', () => {
