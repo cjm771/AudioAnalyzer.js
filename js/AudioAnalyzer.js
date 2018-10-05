@@ -1,5 +1,5 @@
 /***********
-Audio Analyzer
+Audio Analyzer v0.25
 ***********/
 /*
  * Grab a CORS ready http mp3 and analyze/stream away: new AudioAnalyzer('http://myawesome.com/cool.mp3', func);
@@ -12,6 +12,7 @@ Audio Analyzer
  * Analysis
  * ----------
  * then run a loop or whatever and call aa.getLevel(), returns # from 0 --> 1
+ * or run aa.getBars(), return [0,.13,.5,..] # array of 16 numbers for visualizer
  * for Mic (in beta.): run aa.getMicLevel();
  * Copyright Chris Malcolm, 2018
 
@@ -61,6 +62,17 @@ AudioAnalyzer.prototype.getLevel = function(analyzer) {
   return normalizedLevel;
 }
 
+//get level average
+AudioAnalyzer.prototype.getBars = function(analyzer) {
+  analyzer = analyzer || this.analyser;
+  var fftArr = this.fft(analyzer); 
+  //get average from 0 --> 1
+  var count = 0;
+  return [...fftArr].map(function(item) {
+    return item/255;
+  });
+}
+
 AudioAnalyzer.prototype.getMicLevel = function() {
   return this.getLevel(this.analyserIn);
 }
@@ -99,6 +111,13 @@ AudioAnalyzer.prototype.stopMic = function() {
     this.input.disconnect(this.analyserIn);
     this.input = null;
   }
+}
+
+AudioAnalyzer.prototype.destroy = function() {
+  this.pause();
+  this.source.disconnect(this.analyzer);
+  this.source.disconnect(this.audioCtx.destination);
+  this.audioCtx.close();
 }
 
 
@@ -168,3 +187,5 @@ AudioAnalyzer.prototype.loadFromEl = function(el, onReady) {
 	});
 	
 }
+
+export {AudioAnalyzer};
