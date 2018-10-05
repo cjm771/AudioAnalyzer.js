@@ -3,7 +3,7 @@ AudioAnalyzer.js
 
 # About
 
-A simple audio analyzer for streamed sources + microphones. 
+A simple audio analyzer for streamed sources + microphones. Optional React Component also included. 
 
 Current features :
   - load media via url (cors must be enabled on your remote server)
@@ -68,7 +68,7 @@ myAnalyzer.destroy();
 ```
 
 # React Component
-A react data component can be conveniently used in your react application like so. `url` would be your mp3, `play ` would be a bboolean toggle to start / stop the playing. And attach event listenrs to `onAnalyze` or  `onReady`.
+A react data component can be conveniently used in your react application like so. `url` would be your mp3, `play ` would be a boolean toggle to start / stop the playing. And attach event listenrs to `onAnalyze` or  `onReady`.
 
 ###  Component
 ``` jsx
